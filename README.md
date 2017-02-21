@@ -11,5 +11,8 @@ Run bin/setup
 
 **Contents**
 
-- Counter Cache (spec/counter_cache_spec.rb) - Shows how three models: forum_posts, forum_threads and users leverage the 
-counter cache feature in Rails. Source: https://gorails.com/episodes/counter-caches
+Concept | Spec(s) | Description
+------------ | ------------- | -------------
+Counter Cache | spec/concepts/counter_cache_spec.rb | Demonstrates how counter caching allows for incrementing and decrementing association
+
+
