@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'awesome_print'
 
 group :development, :test do
+  gem 'awesome_print'
   gem 'byebug'
   gem 'factory_girl_rails'
   gem 'faker'
