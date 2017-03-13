@@ -5,28 +5,26 @@ describe Benchwarmer do
     let(:num_rows) { 100000 }
     let(:num_cols) { 10 }
 
+    it "shows that when gc is enabled the time to execute is greater" do
+      data = Array.new(num_rows) { Array.new(num_cols) { "x"*1000 } }
 
-      it "shows that when gc is enabled the time to execute is greater" do
-        data = Array.new(num_rows) { Array.new(num_cols) { "x"*1000 } }
+      results_with_gc_enabled  = described_class.run(gc: :enable) {  data.map { |row| row.join(",") }.join("\n") }
 
-        results_with_gc_enabled  = described_class.run(gc: :enable) {  data.map { |row| row.join(",") }.join("\n") }
+      expect(results_with_gc_enabled.gc).to eq :enable
+      expect(results_with_gc_enabled.gc_count).to be > 0
 
-        expect(results_with_gc_enabled.gc).to eq :enable
-        expect(results_with_gc_enabled.gc_count).to be > 0
+      results_with_gc_disabled = described_class.run(gc: :disable) { data.map { |row| row.join(",") }.join("\n") }
 
-        results_with_gc_disabled = described_class.run(gc: :disable) { data.map { |row| row.join(",") }.join("\n") }
+      expect(results_with_gc_disabled.gc).to eq :disable
+      expect(results_with_gc_disabled.gc_count).to eq 0
 
-        expect(results_with_gc_disabled.gc).to eq :disable
-        expect(results_with_gc_disabled.gc_count).to eq 0
+      # when garbage collection is on only the memory of the measure code is resultsed
+      expect(results_with_gc_enabled.memory).to be < results_with_gc_disabled.memory
 
-        # when garbage collection is on only the memory of the measure code is resultsed
-        expect(results_with_gc_enabled.memory).to be < results_with_gc_disabled.memory
+      # when garbage collection is on the time of execution is lower
+      expect(results_with_gc_enabled.time).to be > results_with_gc_disabled.time
 
-        # when garbage collection is on the time of execution is lower
-        expect(results_with_gc_enabled.time).to be > results_with_gc_disabled.time
-
-      end
-
+    end
   end
 
   describe "#print_report"  do
@@ -88,9 +86,6 @@ describe Benchwarmer do
     end
 
   end
-
-
-
 
 end
 
