@@ -1,12 +1,6 @@
 require 'rails_helper'
 describe 'ruby 2.2.0' do
 
-  # Ruby News
-  # https://github.com/ruby/ruby/blob/v2_2_0/NEWS
-
-  #Performance Enhancements
-  #https://www.infoq.com/news/2014/12/ruby-2.2.0-released
-
   context "Enumerable methods" do
 
     # slice_before, slice_after and slice_when return Enumerable

@@ -1,8 +1,5 @@
 require 'rails_helper'
 describe 'ruby 2.3.0' do
-  context "String methods" do
-
-  end
 
   context "Integer methods" do
     describe "positive?" do
