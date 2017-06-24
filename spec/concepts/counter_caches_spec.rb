@@ -7,12 +7,12 @@ describe "counter caches" do
 
     expect(user.minions_count).to eq 1
 
-    #create a thread with its own class and associating it to the user
+    #create a minion with its own class and associating it to the user
     Minion.create(user: user)
 
     expect(user.minions_count).to eq 2
 
-    #destroy a forum thread and check if form_threads_count is updated
+    #destroy a minion  and check if minion_threads_count is updated
     Minion.last.destroy
 
     expect(user.reload.minions_count).to eq 1
