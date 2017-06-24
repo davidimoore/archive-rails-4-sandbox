@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'My behaviour' do
+describe 'Array Operations' do
   let(:num_rows) { 100000 }
   let(:num_cols) { 10 }
   it 'measures different ways of parsing strings to arrays' do
