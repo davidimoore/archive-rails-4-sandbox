@@ -47,6 +47,4 @@
       
       # use
       <%= render @objects %>
-      
-      
       ```        

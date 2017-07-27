@@ -6,6 +6,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.2.7.1'
+gem 'ruby-prof'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 
@@ -28,9 +29,7 @@ group :development do
   gem 'spring'
 end
 
-group :profile do
-  gem 'ruby-prof'
-end
+
 
 group :test do
   gem 'database_cleaner'
