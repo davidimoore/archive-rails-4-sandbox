@@ -77,5 +77,8 @@
   ```
    <%= render partial: 'products/product', collection: @products, cached: true %>
    ```
-````````````- Russian Doll Caching for nested views
+- Russian Doll Caching for nested views
+
+###Reference
+- [Rails Guides - Performance Testing](http://guides.rubyonrails.org/v3.2.13/performance_testing.html)
 
