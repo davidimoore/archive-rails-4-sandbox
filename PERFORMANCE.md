@@ -1,6 +1,10 @@
 ###Tools
 - Skylight
 - [bullet gem](https://github.com/flyerhzm/bullet)
+- [allocation_tracer gem](https://github.com/ko1/allocation_tracer)
+- [memory_profiler gem](https://github.com/SamSaffron/memory_profiler)
+- [rack-mini-profiler gem](https://github.com/MiniProfiler/rack-mini-profiler)
+- [bumbler gem](https://github.com/nevir/Bumbler)
 ###Workers
 - Enable for requests to 3rd party apps   
 - Enable for processing Mailers
@@ -81,4 +85,5 @@
 
 ###Reference
 - [Rails Guides - Performance Testing](http://guides.rubyonrails.org/v3.2.13/performance_testing.html)
+- [Basecamp Russian Doll Caching](https://signalvnoise.com/posts/3112-how-basecamp-next-got-to-be-so-damn-fast-without-using-much-client-side-ui)
 
